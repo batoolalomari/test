@@ -1,0 +1,74 @@
+<!-- using template Driven -->
+<div class="container">
+  <img src="../../../assets/images/logo.png" alt="" srcset="" />
+  <form [formGroup]="formBuilderData" (ngSubmit)="onSubmit()">
+    <label for="Username"
+      ><i class="fa-solid fa-user fa-sm"></i>User Name
+      <input id="Username" formControlName="name" type="text" />
+    </label>
+
+    <label for="Email"
+      ><i class="fa-solid fa-envelope fa-sm"></i>Email
+      <input id="Email" formControlName="email" type="text" />
+      <label *ngIf="email?.errors?.['pattern']">Wrong pateern</label>
+    </label>
+
+    <label for="Phone"
+      ><i class="fa-solid fa-phone fa-sm"></i>Phone
+      <input id="Phone" formControlName="phone" type="text" />
+    </label>
+
+    <label for="Password"
+      ><i class="fa-solid fa-lock fa-sm"></i>Password
+      <input id="Password" formControlName="password" type="password" />
+    </label>
+    <label for="confirmPass"
+      ><i class="fa-solid fa-lock fa-sm"></i>Confirm Password
+      <input id="confirmPass" formControlName="confirmPass" type="password" />
+    </label>
+    <button class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<!-- <h2>{{ singleControl.status }}</h2>
+<label for="signle"
+  >SingleControltrack
+  <input id="signle" type="text" [formControl]="singleControl" />
+  <h5 *ngIf="singleControl.hasError('required')">this field is required</h5>
+  <h5 *ngIf="singleControl.hasError('minlength')">this field is length5</h5>
+</label> -->
+
+<!-- using template driven:  [(ngModel)]
+<label for="">ISSN <input type="text" [(ngModel)]="issn" />{{ issn }}</label> -->
+
+<!-- Using Form Builder
+<div class="container">
+<img src="../../../assets/images/logo.png" alt="" srcset="">
+<form [formGroup]="formBuilderData" (ngSubmit)="onSubmit()">
+  <label for="Username">Username
+  <input formControlName="name" type="text">
+  </label>
+  <label for="Email">Email
+  <input formControlName="email" type="text">
+  </label>
+  <label for="Phone">Phone
+  <input formControlName="phone" type="number">
+  </label>
+  <label for="Password">Password
+  <input formControlName="password" type="text">
+  </label>
+  <label for="confirmPass">confirmPass
+  <input formControlName="confirmPass" type="text">
+  </label>
+  <div formGroupName="address">
+  <label for="City">City
+    <input formControlName="city" type="text">
+    </label>
+    <label for="Street">Street
+      <input formControlName="street" type="text">
+      </label>
+    </div>
+  <button >Submit</button>
+</form>
+
+</div> -->
